@@ -1,0 +1,6 @@
+# IDE config
+.idea
+*.iml
+
+# production
+target/

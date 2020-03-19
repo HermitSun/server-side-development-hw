@@ -1,0 +1,11 @@
+body {
+    font-family: sans-serif;
+}
+
+input.error {
+    color: red;
+}
+
+div.errors {
+    color: red;
+}
