@@ -40,8 +40,6 @@ public class LoginController {
         boolean isValidUser =
                 userService.hasMatchUser(loginInfo.getUserName(),
                         loginInfo.getPassword());
-        System.out.println(loginInfo.getUserName() + " " + loginInfo.getPassword());
-        System.out.println(isValidUser);
         if (!isValidUser) {
             return new ModelAndView("login", "error", "用户名或密码错误。");
         } else {

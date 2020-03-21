@@ -5,6 +5,7 @@ import com.example.dao.UserRegistry;
 import com.example.domain.LoginLog;
 import com.example.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +23,7 @@ public class UserService {
         return matchCount > 0;
     }
 
+    @Cacheable(value = "userNameCache", key = "#userName")
     public User findUserByUserName(String userName) {
         return userDao.findByUserName(userName);
     }
